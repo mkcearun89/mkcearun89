@@ -14,9 +14,5 @@ then the very next rank will be assigned to the values. no of records in the tab
 ranks
 */
 
-select emp_id , row_number over(partition by dept order by dept)  as rn 
-from emp;
-
-select emp_id, rank over(parition by dept) emp_ranks from emp;
-
-select emp_id , dense_rank(partition by dept) enp_dense_ranks from emp;
+select emp_id,salary, row_number over(partition by dept order by dept)  as rn ,
+rank over(parition by dept) emp_ranks , dense_rank(partition by dept) emp_dense_ranks from emp;
