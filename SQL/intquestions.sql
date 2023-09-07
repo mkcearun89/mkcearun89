@@ -15,5 +15,16 @@ select * from (select student_id, rank() over (partition by class order by marks
 from students_mark table ) 
 where rank = 2;
 
+--------------------------------------------------------------------
+
+--- to exchange the gender in a table 
+
+update emp set gender =  case when gender = 'Male' then 'Female'
+                              when gender = 'Female' then 'Male' End
+--------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------
 
 
