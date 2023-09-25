@@ -21,6 +21,18 @@ control file is able to modify by the oracle server only
 contains name and ID of hte database
 Name and location of the redo log files and datafiles
 redo log archive file information
+
+==============================================================
+other files which are not in the database
+parameter file 
+password file 
+Archive redo log files
+
+parameter file has the various parameter that define the characteritize of the database
+password file has the user authencity details 
+  
+Archive redo log files has the archived redo log files in offline mode. which will be helpful to recover the database 
+when there is a media failure.
 ===============================================================================
 
 redo log files
