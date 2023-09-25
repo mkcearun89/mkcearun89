@@ -21,7 +21,22 @@ control file is able to modify by the oracle server only
 contains name and ID of hte database
 Name and location of the redo log files and datafiles
 redo log archive file information
+===============================================================================
+
+redo log files
+redo log files contains the data of the changes happened in the database which is used to recover the 
+database during its failure
+  - the redo log files can be organized into groups 
+  - the data in the redo log?
+
 redo log history 
 backup information 
 tablespace information
 checkpoint information
+=======================================================================================
+LGWR backgroud process writes the redo log files group in a cyclic fashion
+
+The LGWR writes the logs into redo log file groups , the first group will be written by the LGWR and move the next and move on
+once the last group filled and move to the first.
+  
+
