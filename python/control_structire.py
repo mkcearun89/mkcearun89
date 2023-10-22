@@ -18,3 +18,16 @@ def calculation(a):
         print("invalid")
 
 calculation(56)
+
+#####################################################################################################################
+"""
+ Sum of digits of the number 123 will be 6
+ """
+def sumofgivennumber(num):
+    sum = 0
+    for i in str(num):
+        sum+=int(i)
+    print (sum)
+
+sumofgivennumber(123)
+####################################################################################################################
