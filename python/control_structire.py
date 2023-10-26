@@ -31,3 +31,20 @@ def sumofgivennumber(num):
 
 sumofgivennumber(123)
 ####################################################################################################################
+"""
+Ticket generation for Airline
+"""
+
+def tickgeneration(passcount,source,destination):
+    airline='indigo'
+    ticketlist=[]
+    for i in range(1,(passcount+1)):
+        ticket=airline+'-'+source[:3]+'-'+destination[:3]+'-'+str(i)
+        ticketlist.append(ticket)
+    return(ticketlist)
+
+        
+tickets=tickgeneration(10,'Chennai','DELHI')
+lengthof=len(tickets)
+for i in range(1,lengthof):
+ print (tickets[i])
