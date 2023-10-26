@@ -62,3 +62,20 @@ def leapyear_func(input_year):
 
 
 leapyear_func(3000)
+##########################################################################################################################
+"""
+to find a given given number is prime or not
+"""
+def primenumberfind(in_num):
+    if in_num>1:
+        for i in range(2,in_num):
+            if(in_num%i==0):
+                return("given number is not a prime number")
+            else:
+                return("given number is a prime number")
+    else:
+        return("given number is not a prime number")
+
+
+print(primenumberfind(111))
+###########################################################################################################################
