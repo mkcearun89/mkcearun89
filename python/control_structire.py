@@ -48,3 +48,17 @@ tickets=tickgeneration(10,'Chennai','DELHI')
 lengthof=len(tickets)
 for i in range(1,lengthof):
  print (tickets[i])
+######################################################################################################################
+""""
+Program to find an year is leap year or not
+""""
+def leapyear_func(input_year):
+    if(input_year%400 == 0 and input_year%100== 0):
+        print("given year is a leap year")
+    elif(input_year%4== 0 and input_year%100!=0):
+        print("given year is a leap year")
+    else:
+        print("given year is not a leap year")
+
+
+leapyear_func(3000)
