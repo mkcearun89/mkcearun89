@@ -75,6 +75,30 @@ def primenumberfind(in_num):
                 return("given number is a prime number")
     else:
         return("given number is not a prime number")
+###########################################################################################################################
+"""
+hike calcluator for employees
+"""
+
+def hikecalculator(joblevel,current_salary):
+    if (joblevel == 3):
+        revised_salary= current_salary+(15/100*current_salary)
+    elif(joblevel==4):
+        revised_salary= current_salary+(10/100*current_salary)
+    elif(joblevel==5):
+        revised_salary= current_salary+(7/100*current_salary)
+    elif(joblevel==0):
+        revised_salary=current_salary
+    else:
+        revised_salary='Invalid_job_level'
+    return revised_salary
+
+revised_salary = hikecalculator(0,10000)
+
+if type(revised_salary) ==int:
+    print('The revised salary is', revised_salary)
+else:
+    print('Invalid job number')
 
 
 print(primenumberfind(111))
