@@ -9,7 +9,7 @@ def proper_divisor(num):
             lt.append(i)
     return(lt)
 
-lt1=given_num(220)
+lt1=proper_divisor(220)
 print(lt1)
 
 #############################################################################################
