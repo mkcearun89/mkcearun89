@@ -19,3 +19,19 @@ from employee e
 left join department d
 on e.departmentid = d.id )
 where rk between 1 and 3;
+-------------------------------------------------------------------------------------------------------------------------
+/*
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
+| referee_id  | int     |
++-------------+---------+
+In SQL, id is the primary key column for this table.
+Each row of this table indicates the id of a customer, their name, and the id of the customer who referred them.
+*/
+
+select name from customer
+where referee_id != 2
+or referee_id is null;
