@@ -64,3 +64,4 @@ print(str1.join(str2))
 
 str1="India is a great country"
 print(str1.split(" "))
+
