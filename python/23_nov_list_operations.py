@@ -15,3 +15,17 @@ a=[]
 for i in range(1,101):
     a.append(i**2)
 print(a)
+
+print('dictinory is a key value pair in python')
+print('dictinory is mutable')
+
+a={"name":"Arun" , "age":20 , "city":"chennai"}
+print(a)
+print('Changing values in dictionary')
+a["name"]="kumar"
+print(a)
+
+
+print(max(a))
+
+print(min(a))
