@@ -1,0 +1,56 @@
+## With clause has advantage - no need to close the cursor
+## no need to commit the changes inside the py script
+
+import psycopg2
+
+host_name = 'localhost'
+db = 'master'
+username = 'postgres'
+pw = 'Jaisriram@123'
+port_name = 5432
+
+try:
+        with psycopg2.connect(
+                host=host_name,
+                dbname=db,
+                user=username,
+                password=pw,
+                port=port_name) as conn:
+
+                with conn.cursor() as cur:
+
+                        cur.execute('DROP TABLE IF EXISTS DEP')
+
+                        create_script = '''CREATE TABLE IF NOT EXISTS DEP (
+                                                depid int PRIMARY KEY,
+                                                dept_name varchar(40) NOT NULL)'''
+                        cur.execute(create_script)
+
+                        alter_script = '''ALTER TABLE DEP ADD COLUMN salary int'''
+
+                        cur.execute(alter_script)
+
+                        insert_script = 'INSERT INTO DEP (depid, dept_name,salary) VALUES (%s, %s, %s)'
+                        insert_records = [(10,'FSDCG',1000), (11,'ADM',20000), (12, 'MFG',20004), (56, 'IVS',39999)]
+                        for records in insert_records:
+                                cur.execute(insert_script,records)
+                      
+                        cur.execute('select * from dep')
+                        for record in cur.fetchall():
+                                print(record)
+                        delete_script='delete from dep where dept_name=%s'
+                        delete_ar=('MFG',)
+                        print('---------------second time------------------')
+                        cur.execute(delete_script,delete_ar)
+                        cur.execute('select * from dep')
+                        for record in cur.fetchall():
+                                print(record)
+
+except:
+        print(error)
+
+finally:
+        if conn is not None:
+                conn.close()
+
+
